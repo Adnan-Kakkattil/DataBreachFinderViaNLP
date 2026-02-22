@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBreachFinder | Social Media Leakage Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1><span class="shield-icon">🛡️</span> DataBreachFinder <span class="badge">NLP Powered</span></h1>
+            <p class="subtitle">Automated Social Media Monitoring & Data Leakage Detection</p>
+        </header>
+
+        <main>
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total Scanned</span>
+                    <span id="total-scanned" class="stat-value">0</span>
+                </div>
+                <div class="stat-card critical">
+                    <span class="stat-label">Leaked Entities</span>
+                    <span id="total-leaks" class="stat-value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Detection Engines</span>
+                    <span class="stat-value">Active</span>
+                </div>
+            </section>
+
+            <section class="controls">
+                <button id="scan-btn" class="primary-btn">Manual Scan Feed</button>
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span> Monitoring Real-time
+                </div>
+            </section>
+
+            <section class="leak-logs">
+                <h2><span class="icon">📜</span> Incident Logs</h2>
+                <div id="logs-container" class="logs-container">
+                    <!-- Logs will be injected here -->
+                    <div class="empty-state">No leaks detected yet. Monitoring active...</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Social Media Leakage Monitoring Project. Built with NLP & Python.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
