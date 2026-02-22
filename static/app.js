@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const scanBtn = document.getElementById('scan-btn');
+    const targetInput = document.getElementById('target-input');
     const logsContainer = document.getElementById('logs-container');
     const totalScannedEl = document.getElementById('total-scanned');
     const totalLeaksEl = document.getElementById('total-leaks');
@@ -18,15 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scanBtn.addEventListener('click', async () => {
         if (isScanning) return;
-        
+
+        const query = targetInput.value.trim();
         isScanning = true;
-        scanBtn.textContent = 'Scanning...';
+        scanBtn.textContent = 'Searching...';
         scanBtn.disabled = true;
 
         try {
-            const response = await fetch('/api/scan');
+            const url = query ? `/api/scan?query=${encodeURIComponent(query)}` : '/api/scan';
+            const response = await fetch(url);
             const data = await response.json();
-            
+
             // Artificial delay for UX
             setTimeout(() => {
                 updateDashboard();
@@ -61,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderLogs(leaks) {
         // Reverse to show newest on top
         const sortedLeaks = [...leaks].reverse();
-        
+
         logsContainer.innerHTML = sortedLeaks.map(leak => `
             <div class="leak-item">
                 <div class="leak-header">

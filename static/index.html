@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataBreachFinder | Social Media Leakage Monitoring</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Social Media Monitoring for Data Leakage | NLP Powered</title>
+    <link rel="stylesheet" href="/static/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="glass-container">
         <header>
-            <h1><span class="shield-icon">🛡️</span> DataBreachFinder <span class="badge">NLP Powered</span></h1>
-            <p class="subtitle">Automated Social Media Monitoring & Data Leakage Detection</p>
+            <h1><span class="shield-icon">🛡️</span> LeakMonitor <span class="badge">NLP & WebScraping</span></h1>
+            <p class="subtitle">Social Media Monitoring for Data Leakage via NLP & Public Data Analysis</p>
         </header>
 
         <main>
@@ -31,7 +33,10 @@
             </section>
 
             <section class="controls">
-                <button id="scan-btn" class="primary-btn">Manual Scan Feed</button>
+                <div class="search-group">
+                    <input type="text" id="target-input" placeholder="Enter Email or Username..." class="glass-input">
+                    <button id="scan-btn" class="primary-btn">Manual Scan Feed</button>
+                </div>
                 <div class="status-indicator">
                     <span class="pulse-dot"></span> Monitoring Real-time
                 </div>
@@ -50,6 +55,7 @@
             <p>&copy; 2026 Social Media Leakage Monitoring Project. Built with NLP & Python.</p>
         </footer>
     </div>
-    <script src="app.js"></script>
+    <script src="/static/app.js"></script>
 </body>
+
 </html>

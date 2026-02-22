@@ -1,4 +1,5 @@
 fastapi
 uvicorn
 email-validator
-# spacy # Optional enhancement, regex is sufficient for this prototype
+requests
+duckduckgo_search

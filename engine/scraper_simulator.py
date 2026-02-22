@@ -17,11 +17,18 @@ class ScraperSimulator:
             "Normal day at work, nothing to report."
         ]
         
-    def generate_random_post(self):
+    def generate_random_post(self, query=None):
         platform = random.choice(self.platforms)
         user = random.choice(self.users)
         template = random.choice(self.templates)
         
+        # If a query is provided, occasionally make it the user or inject into content
+        if query:
+            if random.random() > 0.5:
+                user = query
+            if random.random() > 0.3:
+                template = f"Found data for {query}: " + template
+
         # Inject sensitive data randomly
         post = template.format(
             password=random.choice(["Admin123!", "qwerty12345", "password000"]),
